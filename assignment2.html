@@ -12,8 +12,6 @@
         }
 
         body {
-            font-family: Verdana, sans-serif;
-            background-color: #f0f0f0;
             margin: 0;
             padding: 0;
             font-family: 'poppins', sans-serif;
@@ -21,6 +19,16 @@
             line-height: 23px;
             font-weight: 400;
             color: black;
+            background-color: #f0f0f0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            /* Make sure the body covers the entire viewport */
+        }
+
+        #content-wrapper {
+            flex: 1;
+            /* Allow the content to grow and fill the available space */
         }
 
         header {
@@ -33,7 +41,7 @@
         nav {
             display: flex;
             justify-content: center;
-            background-color: #444;
+            background-color: #87aaf0;
             padding: 10px;
         }
 
@@ -59,6 +67,9 @@
         #banner h3 {
             color: #fff;
             margin: 0;
+            font-weight: bold;
+            font-size: 23px;
+            margin-top: -180px;
         }
 
         #secondary-image {
@@ -97,13 +108,11 @@
             margin-bottom: 10px;
         }
 
-
-
         .sticky-items {
             display: flex;
             flex-wrap: wrap;
             justify-content: space-around;
-            background-color: #ccc;
+            background-color: #87aaf0;
             padding: 10px;
         }
 
@@ -111,11 +120,13 @@
             margin: 5px;
             text-decoration: none;
             color: #333;
+            font-weight: bold;
+            font-size: 18px;
         }
 
         .iframe-container {
-            width: 100%;
-            height: 400px;
+            width: 500px;
+            /* height: 400px; */
             margin-top: 20px;
         }
 
@@ -124,16 +135,133 @@
             height: 100%;
             border: none;
         }
+
+        #mission-section {
+            background-color: #eee;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        #mission-section img {
+            max-width: 100%;
+            /* Adjust to maintain responsiveness */
+            height: auto;
+        }
+
+        #mission-section .mission {
+            flex: 1;
+            /* Use flex property to make it flexible */
+            margin-left: 130px;
+            /* Add right margin for separation */
+            text-align: justify;
+        }
+
+        #mission-section .mission p {
+            text-align: justify;
+            margin-bottom: 10px;
+            /* Add margin at the bottom */
+            font-size: 16px;
+            /* Increase font size */
+            color: #333;
+            /* Set text color */
+        }
+
+
+        #mission-section img {
+            max-width: 50%;
+            /* Adjust to maintain responsiveness */
+            height: auto;
+        }
+
+        #vision-section {
+            background-color: #eee;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            margin-top: 20px;
+
+            /* Add margin at the top for separation */
+        }
+
+        #vision-section .vision {
+            flex: 1;
+            /* Use flex property to make it flexible */
+            margin-left: 200px;
+            /* Add right margin for separation */
+        }
+
+        #vision-section .vision h2 {
+            margin-bottom: 10px;
+            /* Add margin at the bottom */
+        }
+
+        #vision-section .vision p {
+            text-align: justify;
+
+            font-size: 16px;
+            /* Set font size */
+            color: #333;
+            /* Set text color */
+        }
+
+        #vision-section img {
+            max-width: 50%;
+            /* Adjust to maintain responsiveness */
+            height: auto;
+            order: -1;
+            /* Change the order to move the image to the right */
+        }
+
+        footer {
+            background-color: #87aaf0;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            z-index: 999;
+            /* Ensure footer appears above other elements */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 14px;
+        }
     </style>
 </head>
 
 <body>
     <nav>
-        <a href="#">Home</a>
-        <a href="#">AboutUs</a>
-        <a href="#">Blogs</a>
-        <a href="#">Gallery</a>
-        <a href="#">Contact us</a>
+        <div class="sticky-items selectionShareable">
+            <div class="field item selectionShareable">
+                <a href="content/Climate.html" onclick="loadIframeContent('content/Climate.html')">Climate</a>
+            </div>
+            <div class="field item selectionShareable">
+                <a href="content/Wildlife_Vegetation.html"
+                    onclick="loadIframeContent('content/Wildlife_Vegetation.html')">Wildlife and Vegetation</a>
+            </div>
+            <div class="field item selectionShareable">
+                <a href="content/Place_to_visit.html" onclick="loadIframeContent('content/Place_to_visit.html')">Place
+                    to
+                    visit</a>
+            </div>
+            <div class="field item selectionShareable">
+                <a href="content/Things_to_do.html" onclick="loadIframeContent('content/Things_to_do.html')">Things to
+                    do</a>
+            </div>
+            <div class="field item selectionShareable">
+                <a href="content/Protected_Mammals.html"
+                    onclick="loadIframeContent('content/Protected_Mammals.html')">Protected Mammals and Birds</a>
+            </div>
+        </div>
+        <div class="iframe-container">
+            <iframe id="iframeContent" name="iframeContent" style="height: 0;"></iframe>
+        </div>
     </nav>
 
     <div id="banner">
@@ -158,31 +286,71 @@
         </p>
     </div>
 
-    <div class="sticky-items selectionShareable">
-        <div class="field item selectionShareable">
-            <a href="content/Climate.html" target="iframeContent">Climate</a>
+
+
+    <div id="mission-section">
+        <div class="mission">
+            <h2>Our Mission</h2>
+            <p>
+                The mission of the Annapurna Conservation Area is to preserve and protect the rich biodiversity and
+                natural
+                resources of the region. Through sustainable conservation practices, community engagement, and
+                responsible
+                tourism, our aim is to ensure the ecological integrity of the area while enhancing the well-being of
+                local
+                communities. We strive to strike a balance between environmental conservation and the socio-economic
+                development of the region for the benefit of present and future generations.
+            </p>
         </div>
-        <div class="field item selectionShareable">
-            <a href="content/Wildlife_Vegetation.html" target="iframeContent">Wildlife and Vegetation</a>
-        </div>
-        <div class="field item selectionShareable">
-            <a href="content/Place_to_visit.html" target="iframeContent">Place to visit</a>
-        </div>
-        <div class="field item selectionShareable">
-            <a href="content/Things_to_do.html" target="iframeContent">Things to do</a>
-        </div>
-        <div class="field item selectionShareable">
-            <a href="content/Another_Page.html" target="iframeContent">Another Page</a>
-        </div>
+        <img src="https://media.sublimetrails.com/uploads/img/annapurna-base-camp-trek.webp" alt="Mission Image">
     </div>
 
-    <div class="iframe-container">
-        <iframe name="iframeContent"></iframe>
+    <div id="vision-section">
+        <div class="vision">
+            <h2>Our Vision</h2>
+            <p>
+                The vision of the Annapurna Conservation Area is to become a global model for sustainable conservation
+                and
+                eco-friendly tourism. We aspire to create an environment where the delicate balance between nature and
+                human activities thrives harmoniously. Through continuous efforts, we envision a future where the
+                Annapurna region remains a pristine and thriving ecosystem, ensuring the well-being of both the natural
+                world and the local communities.
+            </p>
+        </div>
+        <img src="https://missionhimalayatreks.com/wp-content/uploads/2022/11/Annapurna-Base-Camp-Trek-1.webp"
+            alt="Vision Image">
     </div>
-    
-    <ul>
 
 
+    <!-- Footer with copyright information -->
+    <footer>
+        <p>&copy; 2024 Jeevan Saud. All Rights Reserved.</p>
+        <p>Assignment Info: COURSE COMP213 Winter 2020 ASSIGNMENT #2</p>
+        <p>Credits: Images and information sourced from
+            <a href="https://ntnc.org.np/project/annapurna-conservation-area-project-acap" target="_blank">NTNC</a>,
+            <a href="https://tigerencounter.com/protected-areas/annapurna-conservation-area/" target="_blank">Tiger
+                Encounter</a>
+
+        </p>
+    </footer>
+
+    <script>
+        function adjustIframeHeight() {
+            var iframe = document.getElementById('iframeContent');
+            var iframeDocument = iframe.contentDocument || iframe.contentWindow.document;
+
+            // Set the iframe height based on its content height
+            iframe.style.height = iframeDocument.body.scrollHeight + 'px';
+        }
+
+        function loadIframeContent(url) {
+            var iframe = document.getElementById('iframeContent');
+            iframe.src = url;
+
+            // Adjust the iframe height after a navigation link is clicked
+            setTimeout(adjustIframeHeight, 100); // Add a small delay to ensure content is loaded before adjusting height
+        }
+    </script>
 </body>
 
 </html>
