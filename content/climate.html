@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* Your CSS styles go here */
+        body {
+            font-family: 'poppins', sans-serif;
+            font-size: 14px;
+            line-height: 23px;
+            font-weight: 400;
+            color: black;
+        }
+
+        p {
+            text-align: justify;
+            padding: 20px;
+            box-sizing: border-box;
+            color: black;
+        }
+
+        p:first-of-type::first-letter {
+            font-weight: bold;
+        }
+
+        .image-container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .image-container img {
+            width: calc(33.33% - 20px); /* 20px margin between images */
+            max-width: 100%; /* Ensure images don't exceed their container width */
+            height: auto; /* Maintain aspect ratio of the images */
+            display: block; /* Remove default image spacing */
+            margin-bottom: 20px; /* Add margin for spacing */
+        }
+    </style>
+</head>
+
+<body>
+    <p>
+        The area stretches from the subtropical lowlands and lush temperate rhododendron forest in the south to dry
+        alpine forest in the north. The climate ranges with the altitude. With every 1000 m. a rise in altitude there is
+        6 degrees Celsius drop in the temperature. The average rainfall ranges from 193 mm in the trans-Himalayan region
+        to 2987 mm at Ghandruk in the cis-Himalayan region.
+    </p>
+
+    <!-- Images container -->
+    <div class="image-container">
+        <!-- Add your images here -->
+        <img src="https://tigerencounter.com/wp-content/uploads/2020/01/Getting-There-ACA.jpg" alt="Description of Image 1">
+        <img src="https://travelinnawalpur.com/wp-content/uploads/2023/06/redmaz-pham-wRyncj6sC3s-unsplash-scaled.jpg" alt="Description of Image 2">
+        <img src="https://www.tripsavvy.com/thmb/5uVcvu0Ul97jrhe8DIU-YRk9zRg=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-670018568-5c08463b46e0fb00017d0168.jpg" alt="Description of Image 3">
+        <!-- Add more images as needed -->
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* Your CSS styles go here */
+        body {
+            font-family: 'poppins', sans-serif;
+            font-size: 14px;
+            line-height: 23px;
+            font-weight: 400;
+            color: black;
+        }
+
+        p {
+            text-align: justify;
+            padding: 20px;
+            box-sizing: border-box;
+            color: black;
+        }
+
+        p:first-of-type::first-letter {
+            font-weight: bold;
+        }
+
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .image-grid img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+
+<body>
+    <p>
+        The wildlife and vegetation are diverse in this conservation area. The altitude of the Annapurna Conservation area
+        ranges from 1000 m – 8000m. From the subtropical sal forest to perennial snow, this area is home to 22 different
+        forests with 1226 plant species. Among them, 55 species of plants are endemic, only found in Nepal.
+        Annapurna Conservation Area is a habitat to about 101 species of mammals including endangered species like snow
+        leopard, musk deer, Tibetan argali, and Tibetan wolf. This is the only area where all 6 Himalayan Pheasants of
+        Nepal are found.
+    </p>
+
+    <div class="image-grid">
+        <img src="https://tigerencounter.com/wp-content/uploads/2020/01/Wildlife-and-Vegetation-ACA.jpg" alt="Image 1">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyEkuLNDxjMzt20xNupahymKhCUg0YZwZDNyQ_RjGH3kGxxZLhE-t_NpED_YwrHq-Ztlw&usqp=CAU" alt="Image 2">
+        <img src=" https://visitsnepal.com/wp-content/uploads/2016/05/Annapurna-Conservation-Area-960x1149.jpg" alt="Image 3">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAAGMWbBEvfYanSVplXtIA6AzlvY5ILcLYSB1Z6omGMChthhlE7942kp0I0sbSDgARHOc&usqp=CAU " alt="Image 4">
+        <img src=" https://birdsofnepal.files.wordpress.com/2015/01/img_0744.jpg?w=507&resize=507%2C285&h=285" alt="Image 5">
+        <img src=" " alt="Image 6">
+        <img src=" " alt="Image 7">
+        <img src=" " alt="Image 8">
+        <!-- Add more images as needed -->
+    </div>
+</body>
+
+</html>
